@@ -11,7 +11,7 @@ This was created for my own use based on my preferences.
 
 
 # Using the plugin
-To invoke code generation ":C <insert your command here>" into the vim statusline 
+To invoke code generation ":C ...insert your request here..." into the vim status line. 
 Code will be inserted into the file from the point the cursor is currently located.
 
 # Setup
@@ -20,8 +20,10 @@ This vim plugin is configured to autoload when vim is run, a package manager is 
 The plugin is written in python and requires any version of vim that support python3.
 On my mac with macOS Sonoma 14.5 I had to use brew to install the latest version of vim.
 
- > brew install vim
- > brew link vim
+```
+> brew install vim
+> brew link vim
+```
 
 To use this plugin you will need to have an anthropic account and an API key.
 The API key from anthropic will need to be stored as an environment variable.
@@ -30,7 +32,7 @@ The API key from anthropic will need to be stored as an environment variable.
 1. Clone this repo to your vim plugin folder
 
 ```
-  ~/.vim/plugin/
+~/.vim/plugin/
 ```
 
 2. The plugin requires python and the anthropic library installed.
@@ -38,7 +40,7 @@ The API key from anthropic will need to be stored as an environment variable.
    
    If you choose to install your python packages locally you can just run 
 ```
-   > pip3 install anthropic
+> pip3 install anthropic
 ```
    Then skip to step 4.
  
@@ -46,35 +48,35 @@ The API key from anthropic will need to be stored as an environment variable.
    I personally prefer to use virtual environments, so here are the steps
 
    a. create a folder for your vim plugins python virtual environment
-```
-      > mkdir ~/Development/vim-plugins
-      > cd ~/Development/vim-plugins
-```
+  ```
+  > mkdir ~/Development/vim-plugins
+  > cd ~/Development/vim-plugins
+  ```
 
    b. setup the virtual environment
-```
-      > python3.12 -n venv . 
-```
+  ```
+  > python3.12 -n venv . 
+  ```
 
    c. activate the virtual environment
-```
-      > source bin/activate
-```
+  ```
+  > source bin/activate
+  ```
 
    d. install anthropic
-```
-      > pip install anthropic
-```
+   ```
+   > pip install anthropic
+   ```
 
    e. deactivate the virtual environment
-```
-      > deactivate
-```
+   ```
+   > deactivate
+   ```
 
 3. Tell vim where to find the python libraries for plugins
    Vim requires the path to be set in an environment variable named "PYTHONPATH"
 ```
-   > export PYTHONPATH=~/Development/vim-plugins/lib/python3.12/site-packages
+> export PYTHONPATH=~/Development/vim-plugins/lib/python3.12/site-packages
 ```
 
    It's best to add this export to your .bashrc or .zshrc file
@@ -82,18 +84,19 @@ The API key from anthropic will need to be stored as an environment variable.
 
 4. Create your anthropic API key and add it to an environment variable named "ANTHROPIC_KEY"
 ```
-   > export ANTHROPIC_KEY=xxxxxxxxxxxx
+> export ANTHROPIC_KEY=xxxxxxxxxxxx
 ```
 
 5. run vim
 ```
-   > vim test.py
+> vim test.py
 ```
    test out code completion
 ```
-   :C create class for managing integration of numpy arrays
+:C create class for managing integration of numpy arrays
 ```
 
+# Component versions
 Developed and tested with the following versions:
 
 OS:
