@@ -3,7 +3,7 @@ This plugin is designed to help vim user workflow by using anthropic's Claude ge
 After using github's copilot I found it to be a little intrusive and expensive.
 
 This plugin requires you to pay athropic per token, the cost depends on your usage.
-As a benchmark I've invoked the plugin about 50 times per day which has equated to ~$0.20 per day (based on my usage).
+As a benchmark I've invoked the plugin ~45 times per day, based on my usage this has so far equated to ~$0.11 per day.
 Based on my usage this is more cost effective compared against githubs copilot.
 
 This plugin has far less features than github's copilot and is not intended to be a competitor. 

@@ -21,4 +21,5 @@ def insert_fn(request):
         nb = vim.current.window.cursor[0]
         for line in response_lines:
             vim.current.buffer.append(line, nb - 1)
+            nb += 1
     return
