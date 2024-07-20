@@ -30,71 +30,28 @@ The API key from anthropic will need to be stored as an environment variable.
 
 ## Plugin install steps:
 1. Clone this repo to your vim plugin folder
-
-```
-~/.vim/plugin/
-```
+   ```
+   ~/.vim/plugin/
+   ```
 
 2. The plugin requires python and the anthropic library installed.
-   Vim needs to know the path to the anthropic library 
-   
-   If you choose to install your python packages locally you can just run 
-```
-> pip3 install anthropic
-```
-   Then skip to step 4.
+   ```
+   > pip3 install anthropic
+   ```
  
-
-   I personally prefer to use virtual environments, so here are the steps
-
-   a. create a folder for your vim plugins python virtual environment
-  ```
-  > mkdir ~/Development/vim-plugins
-  > cd ~/Development/vim-plugins
-  ```
-
-   b. setup the virtual environment
-  ```
-  > python3.12 -n venv . 
-  ```
-
-   c. activate the virtual environment
-  ```
-  > source bin/activate
-  ```
-
-   d. install anthropic
+3. Create your anthropic API key and add it to an environment variable named "ANTHROPIC_KEY"
    ```
-   > pip install anthropic
+   > export ANTHROPIC_KEY=xxxxxxxxxxxx
    ```
 
-   e. deactivate the virtual environment
+4. run vim
    ```
-   > deactivate
+   > vim test.py
    ```
-
-3. Tell vim where to find the python libraries for plugins
-   Vim requires the path to be set in an environment variable named "PYTHONPATH"
-```
-> export PYTHONPATH=~/Development/vim-plugins/lib/python3.12/site-packages
-```
-
-   It's best to add this export to your .bashrc or .zshrc file
-   Please note this will add the virtual environment site-packages folder to your system path and it will be avaiable locally.
-
-4. Create your anthropic API key and add it to an environment variable named "ANTHROPIC_KEY"
-```
-> export ANTHROPIC_KEY=xxxxxxxxxxxx
-```
-
-5. run vim
-```
-> vim test.py
-```
    test out code completion
-```
-:C create class for managing integration of numpy arrays
-```
+   ```
+   :C create class for managing integration of numpy arrays
+   ```
 
 # Component versions
 Developed and tested with the following versions:
