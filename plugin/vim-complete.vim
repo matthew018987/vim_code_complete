@@ -22,3 +22,10 @@ function! Complete(request)
 endfunction
 
 command! -nargs=1 C call Complete(<f-args>)
+
+function! Review()
+  let filepath = execute(":echo expand('%:p')")
+  python3 vim_complete.review_fn(vim.eval('filepath'))
+endfunction
+
+command! -nargs=0 R call Review()
