@@ -51,7 +51,7 @@ def _save_to_file(content, filepath):
         # break up response into list for adding to screen
         response_lines = content.split('\n')
         # write to file
-        reviewfile = filepath.replace('.py', '_review.txt')
+        reviewfile = filepath.replace('.py', '_review.html')
         with open(reviewfile, 'w') as f:
             for line in response_lines:
                 f.write(f"{line}\n")
