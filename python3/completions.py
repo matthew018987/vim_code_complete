@@ -83,7 +83,7 @@ class Completions:
         
         response = self.anthropic_client.messages.create(
             model="claude-3-5-sonnet-20240620",
-            max_tokens=4096,
+            max_tokens=2048,
             system=SYSTEM_PROMPT_REVIEW,
             messages=[
                 {"role": "user", "content": code}
