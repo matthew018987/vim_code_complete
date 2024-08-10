@@ -1,5 +1,5 @@
 if !has('python3')
-    echomsg ':python3 is not available, vim-find-test will not be loaded.'
+    echomsg ':python3 is not available, vim-complete will not be loaded.'
     finish
 endif
 
