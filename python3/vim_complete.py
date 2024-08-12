@@ -1,4 +1,5 @@
 from completions import Completions
+import os
 
 try:
     import vim
@@ -104,6 +105,9 @@ def review_fn(filepath):
     
     response_text, tokens_used = completions.review_code(code)
     reviewfile = _save_to_file(response_text, filepath)
+
+    # open in your default web browser
+    os.system("open " + reviewfile)
    
     # show user review is complete 
     print('review complete: ', reviewfile)
