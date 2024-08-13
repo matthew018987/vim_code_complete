@@ -73,7 +73,7 @@ class Completions:
             string containing generated python code
         """
         
-        response = self.anthropic_client.messages.create(
+        response = self.__get_anthropic().messages.create(
             model="claude-3-5-sonnet-20240620",
             max_tokens=2048,
             system=SYSTEM_PROMPT_CODE,
@@ -96,7 +96,7 @@ class Completions:
             string containing the generated python code review
         """
         
-        response = self.anthropic_client.messages.create(
+        response = self.__get_anthropic().messages.create(
             model="claude-3-5-sonnet-20240620",
             max_tokens=2048,
             system=SYSTEM_PROMPT_REVIEW,
