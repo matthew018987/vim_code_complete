@@ -8,6 +8,9 @@ class Completions:
     Handle integration with Anthropic API for code generation and review tasks
 
     Methods:
+        __get_anthropic()
+            private method to get anthropic client object
+
         __parse_anthropic_response(response)
             private method to parse API response
         
@@ -19,9 +22,22 @@ class Completions:
     """
 
     def __init__(self):
-        self.anthropic_client = anthropic.Anthropic(
-            api_key=os.environ['ANTHROPIC_KEY'],
-        )
+        self.anthropic_client = None
+        return
+
+
+    def __get_anthropic(self):
+        """ 
+        Get anthropic client object, create it if not already created
+
+        Returns:
+            anthropic client object
+        """
+        if self.anthropic_client is None:
+            self.anthropic_client = anthropic.Anthropic(
+                api_key=os.environ['ANTHROPIC_KEY'],
+            )   
+        return self.anthropic_client
 
     
     def __parse_anthropic_response(self, response):
@@ -44,7 +60,6 @@ class Completions:
         # count tokens used
         tokens_used = response.usage.input_tokens + response.usage.output_tokens 
         return response_text, tokens_used
-
 
    
     def write_code(self, request):
